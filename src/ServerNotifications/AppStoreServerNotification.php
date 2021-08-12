@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Imdhemy\Purchases\ServerNotifications;
 
 use Imdhemy\AppStore\ServerNotifications\ServerNotification;
@@ -60,6 +59,14 @@ class AppStoreServerNotification implements ServerNotificationContract
     }
 
     /**
+     * @return array|PendingRenewal[]
+     */
+    public function getPendingRenewalInfo(): array
+    {
+        return $this->notification->getUnifiedReceipt()->getPendingRenewalInfo();
+    }
+
+    /**
      * @return bool
      */
     public function isAutoRenewal(): bool
@@ -73,7 +80,7 @@ class AppStoreServerNotification implements ServerNotificationContract
     public function getAutoRenewStatusChangeDate(): ?Time
     {
         $time = $this->notification->getAutoRenewStatusChangeDate();
-        if (! is_null($time)) {
+        if (!is_null($time)) {
             return Time::fromAppStoreTime($time);
         }
 
