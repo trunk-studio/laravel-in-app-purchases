@@ -1,14 +1,13 @@
 <?php
 
-
 namespace Imdhemy\Purchases\ServerNotifications;
 
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
 use Imdhemy\GooglePlay\ClientFactory;
-use Imdhemy\GooglePlay\DeveloperNotifications\DeveloperNotification;
 use Imdhemy\Purchases\Contracts\ServerNotificationContract;
 use Imdhemy\Purchases\Contracts\SubscriptionContract;
+use Imdhemy\Purchases\GooglePlay\DeveloperNotification;
 use Imdhemy\Purchases\Subscriptions\GoogleSubscription;
 
 /**
@@ -39,10 +38,10 @@ class GoogleServerNotification implements ServerNotificationContract
     public function getType(): string
     {
         $type = $this->isTest() ?
-            self::TESTING_NOTIFICATION :
-            $this->notification->getSubscriptionNotification()->getNotificationType();
+        self::TESTING_NOTIFICATION :
+        $this->notification->getSubscriptionNotification()->getNotificationType();
 
-        return (string)$type;
+        return (string) $type;
     }
 
     /**
@@ -54,11 +53,11 @@ class GoogleServerNotification implements ServerNotificationContract
     public function getSubscription(array $jsonKey = []): SubscriptionContract
     {
         $client = empty($jsonKey) ?
-            null :
-            ClientFactory::createWithJsonKey(
-                $jsonKey,
-                [ClientFactory::SCOPE_ANDROID_PUBLISHER]
-            );
+        null :
+        ClientFactory::createWithJsonKey(
+            $jsonKey,
+            [ClientFactory::SCOPE_ANDROID_PUBLISHER]
+        );
 
         return GoogleSubscription::createFromDeveloperNotification($this->notification, $client);
     }
@@ -77,5 +76,13 @@ class GoogleServerNotification implements ServerNotificationContract
     public function getBundle(): string
     {
         return $this->notification->getPackageName();
+    }
+
+    /**
+     * @return array
+     */
+    public function getNotificationRawData()
+    {
+        return $this->notification->getNotificationRawData();
     }
 }

@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Imdhemy\Purchases\ServerNotifications;
 
-use Imdhemy\AppStore\ServerNotifications\ServerNotification;
 use Imdhemy\AppStore\ValueObjects\ReceiptInfo;
+use Imdhemy\Purchases\AppStore\ServerNotification;
 use Imdhemy\Purchases\Contracts\ServerNotificationContract;
 use Imdhemy\Purchases\Contracts\SubscriptionContract;
 use Imdhemy\Purchases\Subscriptions\AppStoreSubscription;
@@ -60,6 +59,14 @@ class AppStoreServerNotification implements ServerNotificationContract
     }
 
     /**
+     * @return array|PendingRenewal[]
+     */
+    public function getPendingRenewalInfo(): array
+    {
+        return $this->notification->getUnifiedReceipt()->getPendingRenewalInfo();
+    }
+
+    /**
      * @return bool
      */
     public function isAutoRenewal(): bool
@@ -73,7 +80,7 @@ class AppStoreServerNotification implements ServerNotificationContract
     public function getAutoRenewStatusChangeDate(): ?Time
     {
         $time = $this->notification->getAutoRenewStatusChangeDate();
-        if (! is_null($time)) {
+        if (!is_null($time)) {
             return Time::fromAppStoreTime($time);
         }
 
@@ -86,5 +93,13 @@ class AppStoreServerNotification implements ServerNotificationContract
     public function getBundle(): string
     {
         return $this->notification->getBid();
+    }
+
+    /**
+     * @return array
+     */
+    public function getNotificationRawData()
+    {
+        return $this->notification->getNotificationRawData();
     }
 }
