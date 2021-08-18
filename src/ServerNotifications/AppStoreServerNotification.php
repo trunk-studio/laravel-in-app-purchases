@@ -2,8 +2,8 @@
 
 namespace Imdhemy\Purchases\ServerNotifications;
 
-use Imdhemy\AppStore\ServerNotifications\ServerNotification;
 use Imdhemy\AppStore\ValueObjects\ReceiptInfo;
+use Imdhemy\Purchases\AppStore\ServerNotification;
 use Imdhemy\Purchases\Contracts\ServerNotificationContract;
 use Imdhemy\Purchases\Contracts\SubscriptionContract;
 use Imdhemy\Purchases\Subscriptions\AppStoreSubscription;
@@ -93,5 +93,13 @@ class AppStoreServerNotification implements ServerNotificationContract
     public function getBundle(): string
     {
         return $this->notification->getBid();
+    }
+
+    /**
+     * @return array
+     */
+    public function getNotificationRawData()
+    {
+        return $this->notification->getNotificationRawData();
     }
 }

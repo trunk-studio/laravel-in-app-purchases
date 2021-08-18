@@ -1,13 +1,12 @@
 <?php
 
-
 namespace Imdhemy\Purchases\Http\Controllers;
 
 use Illuminate\Support\Facades\Log;
-use Imdhemy\AppStore\ServerNotifications\ServerNotification;
-use Imdhemy\GooglePlay\DeveloperNotifications\DeveloperNotification;
+use Imdhemy\Purchases\AppStore\ServerNotification;
 use Imdhemy\Purchases\Events\AppStore\EventFactory as AppStoreEventFactory;
 use Imdhemy\Purchases\Events\GooglePlay\EventFactory as GooglePlayEventFactory;
+use Imdhemy\Purchases\GooglePlay\DeveloperNotification;
 use Imdhemy\Purchases\Http\Requests\AppStoreServerNotificationRequest;
 use Imdhemy\Purchases\Http\Requests\GoogleDeveloperNotificationRequest;
 use Imdhemy\Purchases\ServerNotifications\AppStoreServerNotification;
@@ -22,7 +21,7 @@ class ServerNotificationController extends Controller
     {
         $data = $request->getData();
 
-        if (! $this->isParsable($data)) {
+        if (!$this->isParsable($data)) {
             Log::info(sprintf("Google Play malformed RTDN: %s", json_encode($request->all())));
 
             return;
@@ -67,6 +66,6 @@ class ServerNotificationController extends Controller
     {
         $decodedData = json_decode(base64_decode($data), true);
 
-        return ! is_null($decodedData);
+        return !is_null($decodedData);
     }
 }
