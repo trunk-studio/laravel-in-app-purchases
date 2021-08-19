@@ -3,9 +3,9 @@
 namespace Imdhemy\Purchases\Tests\Facades;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Imdhemy\AppStore\Receipts\ReceiptResponse;
 use Imdhemy\GooglePlay\Products\ProductPurchase;
 use Imdhemy\Purchases\Facades\Product;
+use Imdhemy\Purchases\Receipts\AppStore\ReceiptResponse;
 use Imdhemy\Purchases\Tests\TestCase;
 
 class ProductTest extends TestCase

@@ -5,11 +5,11 @@ namespace Imdhemy\Purchases\Tests\Facades;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
 use Imdhemy\AppStore\Exceptions\InvalidReceiptException;
-use Imdhemy\AppStore\Receipts\ReceiptResponse;
 use Imdhemy\GooglePlay\ClientFactory;
-use Imdhemy\GooglePlay\Subscriptions\SubscriptionPurchase;
 use Imdhemy\Purchases\Contracts\SubscriptionContract;
 use Imdhemy\Purchases\Facades\Subscription;
+use Imdhemy\Purchases\Receipts\AppStore\ReceiptResponse;
+use Imdhemy\Purchases\Receipts\GooglePlay\SubscriptionPurchase;
 use Imdhemy\Purchases\Tests\TestCase;
 
 class SubscriptionTest extends TestCase

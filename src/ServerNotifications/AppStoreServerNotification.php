@@ -2,10 +2,10 @@
 
 namespace Imdhemy\Purchases\ServerNotifications;
 
-use Imdhemy\AppStore\ValueObjects\ReceiptInfo;
-use Imdhemy\Purchases\AppStore\ServerNotification;
 use Imdhemy\Purchases\Contracts\ServerNotificationContract;
 use Imdhemy\Purchases\Contracts\SubscriptionContract;
+use Imdhemy\Purchases\Receipts\AppStore\ReceiptInfo;
+use Imdhemy\Purchases\ServerNotifications\AppStore\ServerNotification;
 use Imdhemy\Purchases\Subscriptions\AppStoreSubscription;
 use Imdhemy\Purchases\ValueObjects\Time;
 

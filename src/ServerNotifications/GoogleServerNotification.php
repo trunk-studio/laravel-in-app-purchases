@@ -7,7 +7,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use Imdhemy\GooglePlay\ClientFactory;
 use Imdhemy\Purchases\Contracts\ServerNotificationContract;
 use Imdhemy\Purchases\Contracts\SubscriptionContract;
-use Imdhemy\Purchases\GooglePlay\DeveloperNotification;
+use Imdhemy\Purchases\ServerNotifications\GooglePlay\DeveloperNotification;
 use Imdhemy\Purchases\Subscriptions\GoogleSubscription;
 
 /**

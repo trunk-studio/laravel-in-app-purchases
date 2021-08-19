@@ -2,10 +2,10 @@
 
 namespace Imdhemy\Purchases\Tests\ServerNotifications;
 
-use Imdhemy\AppStore\ServerNotifications\ServerNotification;
 use Imdhemy\Purchases\Contracts\ServerNotificationContract;
 use Imdhemy\Purchases\Contracts\SubscriptionContract;
 use Imdhemy\Purchases\ServerNotifications\AppStoreServerNotification;
+use Imdhemy\Purchases\ServerNotifications\AppStore\ServerNotification;
 use Imdhemy\Purchases\Tests\TestCase;
 use Imdhemy\Purchases\ValueObjects\Time;
 

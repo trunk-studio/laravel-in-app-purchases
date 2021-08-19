@@ -200,7 +200,7 @@ For more information check:
 You can use the `\Imdhemy\Purchases\Facades\Product` to send a [verifyReceipt](https://developer.apple.com/documentation/appstorereceipts/verifyreceipt) request to the App Store. as follows:
 
 ```php
-use Imdhemy\AppStore\Receipts\ReceiptResponse;
+use Imdhemy\Purchases\Receipts\AppStore\ReceiptResponse;
 use \Imdhemy\Purchases\Facades\Product;
 
 $receiptData = 'the_base64_encoded_receipt_data';
@@ -218,7 +218,7 @@ For more information check:
 You can use the `\Imdhemy\Purchases\Facades\Subscription` facade to acknowledge or to get the receipt data from Google Play as follows:
 
 ```php
-use Imdhemy\GooglePlay\Subscriptions\SubscriptionPurchase;
+use Imdhemy\Purchases\Receipts\GooglePlay\SubscriptionPurchase;
 use Imdhemy\Purchases\Facades\Subscription;
 
 $itemId = 'product_id';

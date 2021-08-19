@@ -1,6 +1,6 @@
 <?php
 
-namespace Imdhemy\Purchases\GooglePlay;
+namespace Imdhemy\Purchases\ServerNotifications\GooglePlay;
 
 use Imdhemy\GooglePlay\DeveloperNotifications\DeveloperNotification as BaseNotification;
 use Imdhemy\GooglePlay\ValueObjects\Time;
