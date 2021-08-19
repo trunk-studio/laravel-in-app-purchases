@@ -3,13 +3,13 @@
 namespace Imdhemy\Purchases\Http\Controllers;
 
 use Illuminate\Support\Facades\Log;
-use Imdhemy\Purchases\AppStore\ServerNotification;
 use Imdhemy\Purchases\Events\AppStore\EventFactory as AppStoreEventFactory;
 use Imdhemy\Purchases\Events\GooglePlay\EventFactory as GooglePlayEventFactory;
-use Imdhemy\Purchases\GooglePlay\DeveloperNotification;
 use Imdhemy\Purchases\Http\Requests\AppStoreServerNotificationRequest;
 use Imdhemy\Purchases\Http\Requests\GoogleDeveloperNotificationRequest;
 use Imdhemy\Purchases\ServerNotifications\AppStoreServerNotification;
+use Imdhemy\Purchases\ServerNotifications\AppStore\ServerNotification;
+use Imdhemy\Purchases\ServerNotifications\GooglePlay\DeveloperNotification;
 use Imdhemy\Purchases\ServerNotifications\GoogleServerNotification;
 
 class ServerNotificationController extends Controller

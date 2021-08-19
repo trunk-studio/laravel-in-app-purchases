@@ -2,11 +2,11 @@
 
 namespace Imdhemy\Purchases\Tests\Events\AppStore;
 
-use Imdhemy\AppStore\ServerNotifications\ServerNotification;
 use Imdhemy\Purchases\Contracts\PurchaseEventContract;
 use Imdhemy\Purchases\Events\AppStore\EventFactory;
 use Imdhemy\Purchases\Events\AppStore\Revoke;
 use Imdhemy\Purchases\ServerNotifications\AppStoreServerNotification;
+use Imdhemy\Purchases\ServerNotifications\AppStore\ServerNotification;
 use PHPUnit\Framework\TestCase;
 
 class EventFactoryTest extends TestCase

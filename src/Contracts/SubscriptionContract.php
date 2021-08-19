@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Imdhemy\Purchases\Contracts;
 
-use Imdhemy\AppStore\Receipts\ReceiptResponse;
-use Imdhemy\GooglePlay\Subscriptions\SubscriptionPurchase;
+use Imdhemy\Purchases\Receipts\AppStore\ReceiptResponse;
+use Imdhemy\Purchases\Receipts\GooglePlay\SubscriptionPurchase;
 use Imdhemy\Purchases\ValueObjects\Time;
 
 /**

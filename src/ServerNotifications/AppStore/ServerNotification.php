@@ -1,10 +1,10 @@
 <?php
 
-namespace Imdhemy\Purchases\AppStore;
+namespace Imdhemy\Purchases\ServerNotifications\AppStore;
 
-use Imdhemy\AppStore\Receipts\ReceiptResponse;
 use Imdhemy\AppStore\ServerNotifications\ServerNotification as BaseNotification;
 use Imdhemy\AppStore\ValueObjects\Time;
+use Imdhemy\Purchases\Receipts\AppStore\ReceiptResponse;
 
 class ServerNotification extends BaseNotification
 {

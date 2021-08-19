@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Imdhemy\Purchases\Subscriptions;
 
-use Imdhemy\AppStore\ValueObjects\ReceiptInfo;
 use Imdhemy\Purchases\Contracts\SubscriptionContract;
+use Imdhemy\Purchases\Receipts\AppStore\ReceiptInfo;
 use Imdhemy\Purchases\ValueObjects\Time;
 
 class AppStoreSubscription implements SubscriptionContract

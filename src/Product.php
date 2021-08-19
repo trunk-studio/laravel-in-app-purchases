@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Imdhemy\Purchases;
 
 use GuzzleHttp\Client;
@@ -8,11 +7,11 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Imdhemy\AppStore\ClientFactory as AppStoreClientFactory;
 use Imdhemy\AppStore\Exceptions\InvalidReceiptException;
-use Imdhemy\AppStore\Receipts\ReceiptResponse;
 use Imdhemy\AppStore\Receipts\Verifier;
 use Imdhemy\GooglePlay\ClientFactory as GooglePlayClientFactory;
 use Imdhemy\GooglePlay\Products\Product as GooglePlayProduct;
 use Imdhemy\GooglePlay\Products\ProductPurchase;
+use Imdhemy\Purchases\Receipts\AppStore\ReceiptResponse;
 
 class Product
 {
@@ -63,7 +62,7 @@ class Product
      */
     public function appStore(): self
     {
-        $sandbox = (bool)config('purchase.appstore_sandbox');
+        $sandbox = (bool) config('purchase.appstore_sandbox');
 
         $this->client = AppStoreClientFactory::create($sandbox);
         $this->password = config('purchase.appstore_password');

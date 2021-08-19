@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Imdhemy\Purchases;
 
 use GuzzleHttp\Client;
@@ -8,12 +7,12 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Imdhemy\AppStore\ClientFactory as AppStoreClientFactory;
 use Imdhemy\AppStore\Exceptions\InvalidReceiptException;
-use Imdhemy\AppStore\Receipts\ReceiptResponse;
-use Imdhemy\AppStore\Receipts\Verifier;
 use Imdhemy\GooglePlay\ClientFactory as GooglePlayClientFactory;
-use Imdhemy\GooglePlay\Subscriptions\Subscription as GooglePlaySubscription;
-use Imdhemy\GooglePlay\Subscriptions\SubscriptionPurchase;
 use Imdhemy\Purchases\Contracts\SubscriptionContract;
+use Imdhemy\Purchases\Receipts\AppStore\ReceiptResponse;
+use Imdhemy\Purchases\Receipts\AppStore\Verifier;
+use Imdhemy\Purchases\Receipts\GooglePlay\Subscription as GooglePlaySubscription;
+use Imdhemy\Purchases\Receipts\GooglePlay\SubscriptionPurchase;
 use Imdhemy\Purchases\Subscriptions\AppStoreSubscription;
 use Imdhemy\Purchases\Subscriptions\GoogleSubscription;
 
